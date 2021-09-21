@@ -4,7 +4,7 @@
   "description": "trang blog",
   "main": "index.js",
   "scripts": {
-    "beautiful": "lint-staged" ,
+    "beautiful": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/index.js",
     "watch": "node-sass --watch src/resources/scss/ -o src/public/css/"
@@ -15,11 +15,14 @@
   ],
   "author": "giahuy",
   "license": "ISC",
-  
-    "lint-staged": {
-      "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
-    },
-  
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.17.1"
   },

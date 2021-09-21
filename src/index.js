@@ -22,10 +22,10 @@ app.use(express.json());
         extname: '.hbs',
     }),
 );
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resources/views'));
+    app.set('view engine', 'hbs');
+    app.set('views', path.join(__dirname, 'resources/views'));
 
 // Router init
-route(app);
+  route(app);
 
 app.listen(3000);
